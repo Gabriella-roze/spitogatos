@@ -7,30 +7,59 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/queries.css">
     <title>Spitogatos</title>
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="paddingX">
+    <nav>
       <img src="./assets/images/logo.svg" alt="S. logo">
-      <svg width="28" height="23" viewBox="0 0 28 23"><defs>
-      </defs><g transform="translate(-307 -17.5)"><line class="burger-svg" x2="23" transform="translate(309.5 20)"/><line class="burger-svg" x2="23" transform="translate(309.5 29)"/><line class="burger-svg" x2="23" transform="translate(309.5 38)"/></g></svg>
-      <ul class="links-wrapper">
-        <li class="current-page">Main One</li>
-        <li>Page Two</li>
-        <li>Page Three</li>
-        <li>About us</li>
-        <li>Our Work</li>
-        <li>Contact</li>
-      </ul>
-      <div class="language-change-wrapper">
-        <a class="language-active" href="">EN</a>
-        <a href="">GR</a>
-      </div>
+      <svg id="burgerMenu" width="28" height="23" viewBox="0 0 28 23">
+        <g transform="translate(-307 -17.5)"><line class="burger-svg" x2="23" transform="translate(309.5 20)"/><line class="burger-svg" x2="23" transform="translate(309.5 29)"/><line class="burger-svg" x2="23" transform="translate(309.5 38)"/></g></svg>
+      
+        <div class="navigation-wrapper hidden nav-expanded">
+          <div class="mobile-nav-header">
+            <h1>MENU</h1>
+            <svg id="x-menu" width="25.071" height="25.071" viewBox="0 0 25.071 25.071"><g transform="translate(-308.464 -16.464)"><line class="x-svg" x2="18" y2="18" transform="translate(312 20)"/><line class="x-svg" y1="18" x2="18" transform="translate(312 20)"/><line class="x-svg" y1="18" x2="18" transform="translate(312 20)"/></g></svg>
+          </div>
+          <ul class="links-wrapper">
+            <li class="current-page">Main One</li>
+            <li>Page Two</li>
+            <li>Page Three</li>
+            <li>About us</li>
+            <li>Our Work</li>
+            <li>Contact</li>
+          </ul>
+          <div class="language-change-wrapper">
+            <a class="language-active" href="">EN</a>
+            <a href="">GR</a>
+          </div>
+          <div class="mobile-nav-footer">
+            <div class="some-icons-wrapper">
+              <img src="./assets/images/facebook.png" alt="facebook icon">
+              <img src="./assets/images/twitter.png" alt="twitter icon">
+              <img src="./assets/images/instagram.png" alt="instagram icon">
+              <img src="./assets/images/web.png" alt="icon of a globe">
+            </div>
+            <div class="gdpr-links-wrapper">
+              <a href="">Cookies.</a>
+              <a href="">Privacy.</a>
+            </div>
+            <div class="contacts-wrapper">
+              <div>
+                <p>S.und@themail.com</p>
+                <p>+30 210 1234 567</p>
+              </div>
+              <p>© The standard Copyright 2020</p>
+            </div>
+          </div>
+        </div>
     </nav>
     <!-- Main page content -->
     <main>
+
       <!-- Hero section-->
       <section class="paddingX hero-container">
         <h1>S.und Co</h1>
@@ -41,54 +70,71 @@
          <div class="inactive-circle"></div>
        </div>
       </section>
+
       <!-- Articles section -->
-      <section class="paddingX">
+      <section class="paddingX articles-wrapper">
         <article class="article">
-          <img src="./assets/images/6cfa2f3aca711cdcdb097435682f9555-510x638@2x.png" alt="Pop art image of a girl holding a camera">
-          <p>Since the 1500s</p>
-          <h2>
-            The standard
-          </h2>
-          <p class="text-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+          <div class="article__image">
+            <img src="./assets/images/6cfa2f3aca711cdcdb097435682f9555-510x638@2x.png" alt="Pop art image of a girl holding a camera">
+          </div>
+          <div class="article__details">
+            <div class="article__details-content">
+              <p>Since the 1500s</p>
+              <h2>
+                The standard
+              </h2>
+              <p class="text-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.</p>
+            </div>
+          </div>
         </article>
-        <article class="article">
-          <img src="./assets/images/pop-art-love-cushion-46x46cm-848344@2x.png" alt="Pop art image of a black pillow">
-          <p>Since the 1500s</p>
-          <h2>
-            The standard
-          </h2>
-          <p class="text-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <button>Search</button>
+        <article class="article article--mirrored">
+          <div class="article__image">
+            <img src="./assets/images/pop-art-love-cushion-46x46cm-848344@2x.png" alt="Pop art image of a black pillow">
+          </div>
+          <div class="article__details">
+            <div class="article__details-content">
+              <p>Since the 1500s</p>
+              <h2>
+                The standard
+              </h2>
+              <p class="text-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <div>
+                <button>Search</button>
+              </div>
+            </div>
+          </div>
         </article>
       </section>
 
       <!-- Contact form section -->
       <section class="section-contacts">
-        <div class="paddingX">
-          <h2>The standard</h2>
-          <p class="text-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
         <form action="" class="paddingX">
+          <div>
+            <h2>The standard</h2>
+            <p class="text-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
           <input type="text" name="name" id="inputName" placeholder="Full Name *" >
           <p class="text-helper">This field is required</p>
           <input type="email" name="email" id="inputEmail" placeholder="E-mail *">
           <p class="text-helper">This field is required</p>
           <input type="tel" name="phone" id="inputPhone" placeholder="Phone *">
           <p class="text-helper">This field is required</p>
-       <div class="select-wrapper">
-         <select name="category" id="inputCategory">
-           <option value="" disabled selected hidden>Category</option>
-           <option value=""></option>
-         </select>
-       </div>
-       <p class="text-helper">This field is required</p>
-          <div class="select-wrapper">
-            <select name="subcategory" id="inputSubcategory">
-              <option value="" disabled selected hidden>Subcategory</option>
-              <option value=""></option>
-            </select>
+          <div class="categories-wrapper">
+            <div class="select-wrapper">
+              <select name="category" id="inputCategory">
+                <option value="" disabled selected hidden>Category</option>
+                <option value=""></option>
+              </select>
+              <p class="text-helper">This field is required</p>
+            </div>
+            <div class="select-wrapper">
+              <select name="subcategory" id="inputSubcategory">
+                <option value="" disabled selected hidden>Subcategory</option>
+                <option value=""></option>
+              </select>
+              <p class="text-helper">This field is required</p>
+            </div>
           </div>
-          <p class="text-helper">This field is required</p>
           <textarea name="message" id="inputMessage" cols="30" rows="6" placeholder="Message" maxlength="100"></textarea>
           <p class="text-helper">100</p>
           <p class="form-subtitle">Please select at least one of the following:</p>
@@ -108,13 +154,14 @@
         </div>
       </section>
     </main>
+
     <!-- Footer -->
     <footer>
       <p>© The standard Copyright 2020</p>
-      <!-- <div>
+      <div class="footer-links-wrapper">
         <a href="">Cookies.</a>
         <a href="">Privacy.</a>
-      </div> -->
+      </div>
       <img src="./assets/images/Group1198.png" alt="">
     </footer>
     <script type="module" src="/main.js"></script>
