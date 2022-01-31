@@ -332,6 +332,7 @@ nav img {
 .marker-icons-wrapper img {
   width: 31px;
   margin: 0 24px;
+  display: none;
   filter: invert(100%);
 }
 
@@ -364,6 +365,16 @@ textarea {
   border: 1px solid var(--color-darkest);
   border-radius: 28px;
   background: transparent;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: transparent;
 }
 input::placeholder,
 textarea::placeholder {
@@ -481,7 +492,7 @@ input[type="checkbox"]:checked + label:before {
 }
 
 .text-helper {
-  height: 16px;
+  min-height: 16px;
   margin-top: 8px;
   margin-right: 24px;
   margin-bottom: 12px;
