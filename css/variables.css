@@ -1,6 +1,7 @@
 :root {
   /* COLORS */
   --color-primary: rgba(75, 0, 255, 1);
+  --color-primary-dark: rgba(52, 0, 178, 1);
   --color-accent: rgba(180, 255, 0, 1);
   --color-lightest: rgba(255, 255, 255, 1);
   --color-lighter: rgba(248, 248, 248, 1);

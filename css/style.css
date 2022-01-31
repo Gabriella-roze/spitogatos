@@ -23,6 +23,10 @@ button {
   border-radius: 42px;
   background-color: var(--color-primary);
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4);
+  transition: all 0.2s ease-out;
+}
+button:hover {
+  background-color: var(--color-primary-dark);
 }
 .paddingX {
   padding-left: 24px;
@@ -185,20 +189,22 @@ nav img {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: flex-start;
   color: var(--color-lightest);
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0) 0%,
       rgba(0, 0, 0, 1) 100%
     ),
-    url(../assets/images/1858113@2x.png);
-  background-position: center;
-  background-size: cover;
+    url(../assets/images/brick-wall.png); */
+  /* background-position: center;
+  background-size: cover; */
 }
 .hero-container h1 {
   position: relative;
   font-weight: 900;
   font-size: 38px;
+  text-align: left;
 }
 .hero-container h1::before {
   content: "";
@@ -212,6 +218,7 @@ nav img {
   max-width: 350px;
   margin-top: 48px;
   margin-bottom: 48px;
+  text-align: left;
   font-weight: 900;
   font-size: 18px;
   line-height: 24px;
@@ -225,6 +232,14 @@ nav img {
   justify-content: center;
 }
 .circle-wrapper > div {
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  margin-left: 6px;
+  border-radius: 50%;
+  background-color: var(--color-lightest);
+}
+.carousel-indicators [data-bs-target] {
   width: 12px;
   height: 12px;
   margin-right: 6px;
@@ -249,7 +264,7 @@ nav img {
 .article:last-of-type {
   margin-bottom: 48px;
 }
-.article__image {
+.article-image {
   margin-bottom: 32px;
 }
 .article p:first-of-type {
@@ -268,31 +283,77 @@ nav img {
   padding-top: 36px;
   background: var(--color-lighter);
 }
+/* map */
 .map-container {
   min-height: 296px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url(../assets/images/Image2@2x.png);
+  background: url(../assets/images/map.png);
   background-position: center top;
   background-size: 200%;
 }
 .map-marker {
   width: 32px;
   height: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: var(--color-accent);
   border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
 }
+.map-marker p {
+  margin-bottom: 16px;
+  color: var(--color-darkest);
+  font-size: 22px;
+  font-weight: 500;
+  text-align: center;
+  white-space: nowrap;
+  opacity: 0;
+  transition: all 0.1s 0.1s ease-out;
+}
+.map-marker:hover {
+  width: 360px;
+  height: 360px;
+}
+.map-marker:hover p {
+  opacity: 1;
+}
+.marker-icons-wrapper {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.marker-icons-wrapper img {
+  width: 31px;
+  margin: 0 24px;
+  filter: invert(100%);
+}
+
+/* form */
 form {
   display: flex;
   flex-direction: column;
   margin-top: 32px;
   margin-bottom: 40px;
 }
+.form-description {
+  margin-bottom: 40px;
+}
 .form-subtitle {
   line-height: 24px;
   color: var(--color-darker);
+}
+.text-error {
+  color: red !important;
+}
+.border-error {
+  border-color: red !important;
 }
 input,
 select,
@@ -420,6 +481,7 @@ input[type="checkbox"]:checked + label:before {
 }
 
 .text-helper {
+  height: 16px;
   margin-top: 8px;
   margin-right: 24px;
   margin-bottom: 12px;
