@@ -7,14 +7,15 @@ const checkboxHelpText = document.getElementById('checkboxHelpText')
 // LISTENERS & FUNCTIONS
 form.addEventListener('submit', (e) => {
     e.preventDefault()
+    // we reset all form errors
+    resetAllFormErrors()
     
     if  (validateForm()) {
-        // If the form validatin is passed:
-        // we reset all form errors
-        resetAllFormErrors()
-        
+        // If the form validatin is passed:    
         // Then here we would submit the form and
         // show "success" message if that went through
+        // the most basic way below:
+        alert('Success!')
 
         // and finally reset the form input values
         form.reset()
@@ -44,14 +45,14 @@ function resetAllFormErrors() {
     // loop though the array and remove error messages and error classes
     inputsWithErrorArr.forEach((input) => {
         input.classList.remove("border-error")
-        input.nextElementSibling.innerHTML = "This field is required"
+        input.nextElementSibling.innerHTML = ""
         input.nextElementSibling.classList.remove('text-error')
     })
 }
 
 function validateForm() {
     let error = false
-    let min, max
+    let max
     document.querySelectorAll("[data-validate]").forEach(element => {
         element.classList.remove('input-error')
         switch (element.getAttribute("data-validate")) {
@@ -104,15 +105,24 @@ function validateForm() {
                 break
             case "message":
                 max = parseInt(element.getAttribute("data-max"))
-                message = element.value
+                let message = element.value
                 if ( message.length > max ) {
                     element.classList.add('border-error')
                     element.nextElementSibling.classList.add('text-error')
                     error = true
                 }
                 break
+            case "checkboxGroup":
+                let checked = element.querySelectorAll('input[type="checkbox"]:checked')
+                if ( checked.length < 1 ) {
+                    element.classList.add('border-error')
+                    element.nextElementSibling.classList.add('text-error')
+                    element.nextElementSibling.innerHTML = "You must choose at least one option"
+                    error = true
+                }
+                break
         }
     })
 
-    return error ? false : true
+    return error
 }
