@@ -16,20 +16,20 @@
     <!-- Navigation -->
     <nav>
       <img src="./assets/images/logo.svg" alt="S. logo">
-      <svg id="burgerMenu" width="28" height="23" viewBox="0 0 28 23">
+      <svg aria-label="open mobile navigation" id="burgerMenu" width="28" height="23" viewBox="0 0 28 23">
         <g transform="translate(-307 -17.5)"><line class="burger-svg" x2="23" transform="translate(309.5 20)"/><line class="burger-svg" x2="23" transform="translate(309.5 29)"/><line class="burger-svg" x2="23" transform="translate(309.5 38)"/></g></svg>
         <div class="navigation-wrapper hidden nav-expanded">
           <div class="mobile-nav-header hidden">
             <h1>MENU</h1>
-            <svg id="x-menu" width="25.071" height="25.071" viewBox="0 0 25.071 25.071"><g transform="translate(-308.464 -16.464)"><line class="x-svg" x2="18" y2="18" transform="translate(312 20)"/><line class="x-svg" y1="18" x2="18" transform="translate(312 20)"/><line class="x-svg" y1="18" x2="18" transform="translate(312 20)"/></g></svg>
+            <svg aria-label="close mobile navigation" id="x-menu" width="25.071" height="25.071" viewBox="0 0 25.071 25.071"><g transform="translate(-308.464 -16.464)"><line class="x-svg" x2="18" y2="18" transform="translate(312 20)"/><line class="x-svg" y1="18" x2="18" transform="translate(312 20)"/><line class="x-svg" y1="18" x2="18" transform="translate(312 20)"/></g></svg>
           </div>
           <ul class="links-wrapper">
-            <li class="current-page">Main One</li>
-            <li>Page Two</li>
-            <li>Page Three</li>
-            <li>About us</li>
-            <li>Our Work</li>
-            <li>Contact</li>
+            <li class="current-page"><a href="">Main One</a></li>
+            <li><a href="">Page Two</a></li>
+            <li><a href="">Page Three</a></li>
+            <li><a href="">About us</a></li>
+            <li><a href="">Our Work</a></li>
+            <li><a href="">Contact</a></li>
           </ul>
           <div class="language-change-wrapper">
             <a class="language-active" href="">EN</a>
@@ -37,10 +37,10 @@
           </div>
           <div class="mobile-nav-footer hidden">
             <div class="some-icons-wrapper">
-              <img src="./assets/images/facebook.png" alt="facebook icon">
-              <img src="./assets/images/twitter.png" alt="twitter icon">
-              <img src="./assets/images/instagram.png" alt="instagram icon">
-              <img src="./assets/images/web.png" alt="icon of a globe">
+              <a href=""><img src="./assets/images/facebook.png" alt="facebook icon"></a>
+              <a href=""><img src="./assets/images/twitter.png" alt="twitter icon"></a>
+              <a href=""><img src="./assets/images/instagram.png" alt="instagram icon"></a>
+              <a href=""><img src="./assets/images/web.png" alt="icon of a globe"></a>
             </div>
             <div class="gdpr-links-wrapper">
               <a href="">Cookies.</a>
@@ -134,31 +134,31 @@
             <h2>The standard</h2>
             <p class="text-body form-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
           </div>
-          <input type="text" name="name" id="inputName" placeholder="Full Name *" data-validate="name"
+          <input aria-label="name" type="text" name="name" id="inputName" placeholder="Full Name *" data-validate="name"
           required >
           <p class="text-helper">This field is required</p>
-          <input type="email" name="email" id="inputEmail" placeholder="E-mail *" data-validate="email"
+          <input aria-label="email" type="email" name="email" id="inputEmail" placeholder="E-mail *" data-validate="email"
            required >
           <p class="text-helper">This field is required</p>
-          <input type="tel" name="phone" id="inputPhone" placeholder="Phone *" data-validate="phone"
+          <input aria-label="phone" type="tel" name="phone" id="inputPhone" placeholder="Phone *" data-validate="phone"
           required >
           <p class="text-helper">This field is required</p>
           <div class="categories-wrapper">
             <div class="select-wrapper">
-              <select name="category" id="inputCategory">
+              <select aria-label="category" name="category" id="inputCategory">
                 <option value="" disabled selected hidden>Category</option>
               </select>
               <p class="text-helper"></p>
             </div>
             <div class="select-wrapper">
-              <select name="subcategory" id="inputSubcategory">
+              <select aria-label="subcategory" name="subcategory" id="inputSubcategory">
                 <option value="" disabled selected hidden>Subcategory</option>
           
               </select>
               <p class="text-helper"></p>
             </div>
           </div>
-          <textarea name="message" id="inputMessage" cols="30" rows="6" placeholder="Message" data-validate="message" data-max="10"></textarea>
+          <textarea aria-label="message" name="message" id="inputMessage" cols="30" rows="6" placeholder="Message" data-validate="message" data-max="10"></textarea>
           <p id="messageHelpText" class="text-helper">0/100</p>
           <p id="checkboxHelpText" class="form-subtitle">Please select at least one of the following:</p>
           <div class="checkbox-wrapper" data-validate="checkboxGroup">
@@ -176,7 +176,7 @@
         <!-- map -->
         <div class="map-container">
           <div class="map-marker">
-            <p >S.und@themail.com</p>
+            <p>S.und@themail.com</p>
             <p>+30 210 1234 567</p>
               <div class="marker-icons-wrapper">
                 <img src="./assets/images/facebook.png" alt="facebook icon">

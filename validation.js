@@ -7,11 +7,11 @@ const checkboxHelpText = document.getElementById('checkboxHelpText')
 // LISTENERS & FUNCTIONS
 form.addEventListener('submit', (e) => {
     e.preventDefault()
-    // we reset all form errors
+
     resetAllFormErrors()
     
     if  (validateForm()) {
-        // If the form validatin is passed:    
+        // If the form validation is passed:    
         // Then here we would submit the form and
         // show "success" message if that went through
         // the most basic way below:
@@ -52,7 +52,6 @@ function resetAllFormErrors() {
 
 function validateForm() {
     let error = false
-    let max
     document.querySelectorAll("[data-validate]").forEach(element => {
         element.classList.remove('input-error')
         switch (element.getAttribute("data-validate")) {
@@ -60,7 +59,6 @@ function validateForm() {
                 const phoneRegex = /^[0-9]{3}(-|.)[0-9]{4}(-|.)[0-9]{4}$/
                 input = element.value
                 if (!phoneRegex.test(element.value)) {
-                    console.log("Error in phone nr")
                     element.classList.add('border-error')
                     element.nextElementSibling.innerHTML = "Please provide a correctly formatted phone number (123-1234-1234)"
                     element.nextElementSibling.classList.add('text-error')
@@ -104,7 +102,7 @@ function validateForm() {
                 }
                 break
             case "message":
-                max = parseInt(element.getAttribute("data-max"))
+                let max = parseInt(element.getAttribute("data-max"))
                 let message = element.value
                 if ( message.length > max ) {
                     element.classList.add('border-error')

@@ -10,7 +10,6 @@ const subCategorySelect = document.querySelector("#inputSubcategory");
 
 // LISTENERS
  categorySelect.addEventListener("change", handleCategoryChange);
- subCategorySelect.addEventListener("change", handleSubcategoryChance);
  burgerMenu.addEventListener('click', toggleMobileMenu);
 
 (function init() {
@@ -84,23 +83,16 @@ function populateSubcategorySelect(options) {
 
 function handleCategoryChange(e) {
   console.log("[onCategoryChange] Subcategory changed");
-  const currentlySelectedOption = e.target.options[e.target.selectedIndex];
-  const subCategories = currentlySelectedOption.dataset.subcategories;
+  const currentlySelectedOption = e.target.options[e.target.selectedIndex]
+  const subCategories = currentlySelectedOption.dataset.subcategories
 
   if (subCategories) {
     // If there are subcategories, we parse them to turn them into an array again
     // and call the populateSubcategorySelect function to populate the subcategories select.
-    const subCategoriesArray = JSON.parse(subCategories);
-    populateSubcategorySelect(subCategoriesArray);
+    const subCategoriesArray = JSON.parse(subCategories)
+    populateSubcategorySelect(subCategoriesArray)
   } else {
-    populateSubcategorySelect([]);
+    populateSubcategorySelect([])
   }
-}
-
-function handleSubcategoryChance(e) {
-  console.log("[onSubcategoryChange] Subcategory changed");
-  console.log(e);
-  console.log(e.target.value);
-  console.log(e.target.options[e.target.selectedIndex].text);
 }
 
