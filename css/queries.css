@@ -85,8 +85,7 @@
 
   /* HERO SECTION */
   .hero-container {
-    min-height: calc(100vh - 64px);
-
+    height: calc(100vh - 64px);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
