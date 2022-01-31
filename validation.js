@@ -53,11 +53,9 @@ function resetAllFormErrors() {
 function validateForm() {
     let error = false
     document.querySelectorAll("[data-validate]").forEach(element => {
-        element.classList.remove('input-error')
         switch (element.getAttribute("data-validate")) {
             case "phone":
                 const phoneRegex = /^[0-9]{3}(-|.)[0-9]{4}(-|.)[0-9]{4}$/
-                input = element.value
                 if (!phoneRegex.test(element.value)) {
                     element.classList.add('border-error')
                     element.nextElementSibling.innerHTML = "Please provide a correctly formatted phone number (123-1234-1234)"
@@ -122,5 +120,6 @@ function validateForm() {
         }
     })
 
-    return error
+
+    return !error
 }
