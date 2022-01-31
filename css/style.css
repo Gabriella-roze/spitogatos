@@ -590,7 +590,8 @@ footer p {
     overflow-y: auto;
   }
   .navigation-wrapper {
-    height: 64px !important;
+    height: 100% !important;
+    overflow: hidden;
     visibility: inherit;
     display: flex;
     justify-content: space-between;
