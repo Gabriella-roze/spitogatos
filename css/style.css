@@ -3,6 +3,7 @@
 /* ******************* */
 /* GENERAL UI ELEMENTS */
 /* ******************* */
+
 body {
   width: 100%;
   font-family: var(--font-family);
@@ -281,6 +282,7 @@ nav img {
 .article-image {
   margin-bottom: 32px;
 }
+
 .article p:first-of-type {
   margin-bottom: 4px;
   font-weight: bold;
@@ -291,13 +293,12 @@ nav img {
 .article p:nth-of-type(2) {
   margin-bottom: 33px;
 }
-
-/* Rotate animation */
-.img-rotate {
-  transition: all 0.3s ease-in-out;
-}
-.img-rotate:hover {
-  transform: rotate(180deg);
+/* Image scroll base for mobile view */
+img.img-bg-scroll {
+  height: 35vh;
+  width: 100%;
+  object-fit: cover;
+  object-position: top;
 }
 
 /* Contact form section */
@@ -355,7 +356,6 @@ nav img {
 .marker-icons-wrapper img {
   width: 31px;
   margin: 0 24px;
-  display: none;
   filter: invert(100%);
 }
 
@@ -701,6 +701,24 @@ footer p {
     align-items: flex-end;
   }
 
+  /* Image scroll animation on desktop view */
+  img.img-bg-scroll {
+    height: 368px;
+    width: 696px;
+    transition: all 0.3s ease-in-out;
+  }
+  img.img-bg-scroll:hover {
+    object-position: bottom;
+  }
+
+  /* Rotate animation */
+  .img-rotate {
+    transition: all 0.3s ease-in-out;
+  }
+  .img-rotate:hover {
+    transform: rotate(180deg);
+  }
+
   /* Contact form section*/
   .section-contacts {
     padding-top: 0px;
@@ -740,6 +758,11 @@ footer p {
   .categories-wrapper {
     display: flex;
     justify-content: space-between;
+  }
+
+  /* Map */
+  .marker-icons-wrapper {
+    display: flex;
   }
 
   /* Footer section */
