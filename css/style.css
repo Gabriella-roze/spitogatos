@@ -352,6 +352,7 @@ img.img-bg-scroll {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  opacity: 0;
 }
 .marker-icons-wrapper img {
   width: 31px;
@@ -728,15 +729,6 @@ footer p {
   form > div:first-of-type {
     margin-bottom: 40px;
   }
-  .map-container {
-    width: 80vw;
-    background-position: center;
-    background-size: cover;
-  }
-  .map-marker:hover {
-    width: 358px;
-    height: 358px;
-  }
   form {
     margin-top: 104px;
     margin-bottom: 110px;
@@ -761,8 +753,17 @@ footer p {
   }
 
   /* Map */
-  .marker-icons-wrapper {
-    display: flex;
+  .map-container {
+    width: 80vw;
+    background-position: center;
+    background-size: cover;
+  }
+  .map-marker:hover {
+    width: 358px;
+    height: 358px;
+  }
+  .map-marker:hover .marker-icons-wrapper {
+    opacity: 1;
   }
 
   /* Footer section */
